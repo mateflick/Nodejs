@@ -16,7 +16,7 @@ const {
 module.exports = {
     name: "photochallenge",
     mixins: [DbService],
-    adapter: new MongooseAdapter("mongodb://iostriz:sbsljm30@ds251362.mlab.com:51362/mateflickdb"),
+    adapter: new MongooseAdapter("mongodb://mateuser1:mateuser30@ds251362.mlab.com:51362/mateflickdb"),
     model: ChallengePhoto,
     settings: {
 

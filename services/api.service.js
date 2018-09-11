@@ -7,7 +7,7 @@ const {
 } = require("moleculer").Errors;
 const multer = require('multer');
 // const mongoURI = 'mongodb://localhost:27017/mateflick';
-const mongoURI = 'mongodb://iostriz:sbsljm30@ds251362.mlab.com:51362/mateflickdb';
+const mongoURI = 'mongodb://mateuser1:mateuser30@ds251362.mlab.com:51362/mateflickdb';
 var mongoose = require('mongoose');
 // Create a storage object with a given configuration
 const storage = require('multer-gridfs-storage')({

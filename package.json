@@ -1,7 +1,15 @@
 {
+  "//": "mandatory fields first",
+  
   "name": "mateflick",
   "version": "1.0.0",
   "description": "Mateflick",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mateflick/Nodejs.git"
+},
+
   "scripts": {
     "dev": "moleculer-runner --repl --hot services",
     "start": "moleculer-runner services",
@@ -39,5 +47,4 @@
     "node": ">= 6.x.x"
   },
   "main": "moleculer.config.js",
-  "license": "ISC"
 }
