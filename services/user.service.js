@@ -26,7 +26,7 @@ module.exports = {
     // version: 1,
     model: User,
     mixins: [DbService],
-    adapter: new MongooseAdapter("mongodb://localhost:27017/mateflick"),
+    adapter: new MongooseAdapter("mongodb://iostriz:kigipuo19@ds251362.mlab.com:51362/mateflickdb"),
 
 
     /**

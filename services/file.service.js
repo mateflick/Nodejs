@@ -8,7 +8,7 @@ const file = require('../model/file');
 let Response = require('../responses/success');
 const ObjectID = require('mongodb').ObjectID;
 
-const mongoURI = 'mongodb://localhost:27017/mateflick';
+const mongoURI = 'mongodb://iostriz:kigipuo19@ds251362.mlab.com:51362/mateflickdb';
 // Create a storage object with a given configuration
 const storage = require('multer-gridfs-storage')({
     url: mongoURI
