@@ -14,7 +14,7 @@ const {
 module.exports = {
     name: "post",
     mixins: [DbService],
-    adapter: new MongooseAdapter("mongodb://iostriz:kigipuo19@ds251362.mlab.com:51362/mateflickdb"),
+    adapter: new MongooseAdapter("mongodb://iostriz:sbsljm30@ds251362.mlab.com:51362/mateflickdb"),
     model: post,
     settings: {
 
