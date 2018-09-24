@@ -133,7 +133,7 @@ module.exports = {
                 var query = {};
                 if (entity.AccountType == null || entity.AccountType == 0) {
                     query = {
-                        EmailAddress: entity.Id,
+                        EmailAddress: entity.EmailAddress,
                         // $or: [{
                         //     EmailAddress: entity.Id,
                         //     UserType: entity.UserType
