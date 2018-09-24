@@ -133,13 +133,14 @@ module.exports = {
                 var query = {};
                 if (entity.AccountType == null || entity.AccountType == 0) {
                     query = {
-                        $or: [{
-                            EmailAddress: entity.Id,
-                            UserType: entity.UserType
-                        }, {
-                            Mobile: entity.Id,
-                            UserType: entity.UserType,
-                        }]
+                        EmailAddress: entity.Id,
+                        // $or: [{
+                        //     EmailAddress: entity.Id,
+                        //     UserType: entity.UserType
+                        // }, {
+                        //     Mobile: entity.Id,
+                        //     UserType: entity.UserType,
+                        // }]
                     }
                 } else {
                     query = {
