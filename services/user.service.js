@@ -131,13 +131,19 @@ module.exports = {
             handler(ctx) {
                 let entity = ctx.params;
                 var query = {};
+                // var query = { 
+                //     $or: [
+                //         { EmailAddress: entity.EmailAddress },
+                //         { Mobile: entity.Mobile },
+                // }
+            
                 if (entity.AccountType == null || entity.AccountType == 0) {
                     query = {
                         $or: [{
-                            EmailAddress: entity.EmailAddress,
+                            EmailAddress: entity.Id,
                             UserType: entity.UserType
                         }, {
-                            Mobile: entity.Mobile,
+                            Mobile: entity.Id,
                             UserType: entity.UserType,
                         }]
                     }
