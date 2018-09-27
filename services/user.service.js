@@ -137,6 +137,11 @@ module.exports = {
                 //         { Mobile: entity.Mobile },
                 // }
             
+
+
+                console.log(`action register entity:\n${entity}`)
+
+
                 if (entity.AccountType == null || entity.AccountType == 0) {
                     query = {
                         $or: [{
@@ -153,6 +158,9 @@ module.exports = {
                         AccountType: entity.AccountType,
                     }
                 }
+
+
+
                 return this.broker.call("user.find", {
                         query: query
                     })
@@ -734,7 +742,15 @@ module.exports = {
             handler(ctx) {
                 let entity = ctx.params;
                 var query = {};
+
+
+
+                console.log(`action login entity:\n${entity}`)
+
+
+                // Mate
                 if (entity.AccountType == null || entity.AccountType == 0) {
+                    
                     query = {
                         $or: [{
                             EmailAddress: entity.Id,
@@ -744,12 +760,21 @@ module.exports = {
                             UserType: entity.UserType,
                         }]
                     }
+
+                // Photographer
                 } else {
+                    
                     query = {
                         SocialId: entity.Id,
                         AccountType: entity.AccountType,
                     }
                 }
+
+
+
+
+
+
 
                 return this.broker.call("user.find", {
                         query: query,

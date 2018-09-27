@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "Mateflick",
   "repository": {
-      "type": "git",
-      "url": "git://github.com/mateflick/Nodejs.git"
+    "type": "git",
+    "url": "git://github.com/mateflick/Nodejs.git"
   },
-
-
   "scripts": {
     "dev": "moleculer-runner --repl --hot services",
     "start": "moleculer-runner services",
