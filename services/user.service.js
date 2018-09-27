@@ -139,7 +139,7 @@ module.exports = {
             
 
 
-                console.log(`action register entity:\n${entity}`)
+                console.log(`action register entity:\n${JSON.stringify(entity, null, 4)}`)
 
 
                 if (entity.AccountType == null || entity.AccountType == 0) {
@@ -745,7 +745,7 @@ module.exports = {
 
 
 
-                console.log(`action login entity:\n${entity}`)
+                console.log(`action login entity:\n${JSON.stringify(entity, null, 4)}`)
 
 
                 // Mate
