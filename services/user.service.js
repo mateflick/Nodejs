@@ -137,27 +137,27 @@ module.exports = {
                 //         { Mobile: entity.Mobile },
                 // }
             
-
-
                 console.log(`action register entity:\n${JSON.stringify(entity, null, 4)}`)
 
+                var query = { EmailAddress: entity.Id };
 
-                if (entity.AccountType == null || entity.AccountType == 0) {
-                    query = {
-                        $or: [{
-                            EmailAddress: entity.Id,
-                            UserType: entity.UserType
-                        }, {
-                            Mobile: entity.Id,
-                            UserType: entity.UserType,
-                        }]
-                    }
-                } else {
-                    query = {
-                        SocialId: entity.SocialId,
-                        AccountType: entity.AccountType,
-                    }
-                }
+
+                // if (entity.AccountType == null || entity.AccountType == 0) {
+                //     query = {
+                //         $or: [{
+                //             EmailAddress: entity.Id,
+                //             UserType: entity.UserType
+                //         }, {
+                //             Mobile: entity.Id,
+                //             UserType: entity.UserType,
+                //         }]
+                //     }
+                // } else {
+                //     query = {
+                //         SocialId: entity.SocialId,
+                //         AccountType: entity.AccountType,
+                //     }
+                // }
 
 
 
@@ -741,40 +741,38 @@ module.exports = {
             },
             handler(ctx) {
                 let entity = ctx.params;
-                var query = {};
-
+ 
 
 
                 console.log(`action login entity:\n${JSON.stringify(entity, null, 4)}`)
 
 
+
+
                 // Mate
-                if (entity.AccountType == null || entity.AccountType == 0) {
+                // if (entity.AccountType == null || entity.AccountType == 0) {
                     
-                    query = {
-                        $or: [{
-                            EmailAddress: entity.Id,
-                            UserType: entity.UserType
-                        }, {
-                            Mobile: entity.Id,
-                            UserType: entity.UserType,
-                        }]
-                    }
+                //     query = {
+                //         $or: [{
+                //             EmailAddress: entity.Id,
+                //             UserType: entity.UserType
+                //         }, {
+                //             Mobile: entity.Id,
+                //             UserType: entity.UserType,
+                //         }]
+                //     }
 
-                // Photographer
-                } else {
+                // // Photographer
+                // } else {
                     
-                    query = {
-                        SocialId: entity.Id,
-                        AccountType: entity.AccountType,
-                    }
-                }
+                //     query = {
+                //         SocialId: entity.Id,
+                //         AccountType: entity.AccountType,
+                //     }
+                // }
 
 
-
-
-
-
+                let query = { EmailAddress: entity.Id };
 
                 return this.broker.call("user.find", {
                         query: query,
@@ -795,6 +793,8 @@ module.exports = {
                                         throw new ValidationError("System error", -1, "System error");
                                     } else if (res) {
                                         user.Password = undefined;
+                                        // if logging in as different user type, it should be updated
+                                        user.UserType = entity.UserType;
                                         if (entity.Token != null) {
                                             this.adapter.updateById(users.UserId, {
                                                 $set: {
@@ -840,8 +840,6 @@ module.exports = {
                                     });
                                 });
                             }
-
-
 
                         }
 
