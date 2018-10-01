@@ -20,7 +20,9 @@
 const MongoAdapter = require("moleculer-db-adapter-mongo");
 const DbService	= require("moleculer-db");
 
-process.env.MONGO_URI = "mongodb://mateuser1:mateuser30@ds251362.mlab.com:51362/mateflickdb";
+// process.env.MONGO_URI = "mongodb://mateuser1:mateuser30@ds251362.mlab.com:51362/mateflickdb";
+
+
 
 module.exports = function(collection) {
 		// Mongo adapter

@@ -14,7 +14,7 @@ const {
 module.exports = {
     name: "sms",
     mixins: [DbService],
-    adapter: new MongooseAdapter("mongodb://mateuser1:mateuser30@ds251362.mlab.com:51362/mateflickdb"),
+    adapter: new MongooseAdapter(process.env.MONGO_URI),
     model: SMS,
     settings: {
 
