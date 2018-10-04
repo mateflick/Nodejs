@@ -4,7 +4,7 @@
 const DbService = require("moleculer-db");
 const MongooseAdapter = require("moleculer-db-adapter-mongoose");
 const mongoose = require("mongoose");
-var ObjectID = require('mongodb').ObjectID;
+const ObjectID = require('mongodb').ObjectID;
 const Challenge = require('../model/challenge');
 let Response = require('../responses/success');
 const {
@@ -15,7 +15,7 @@ const {
 module.exports = {
     name: "challenge",
     mixins: [DbService],
-    adapter: new MongooseAdapter(process.env.MONGO_URI); //process.env.MONGO_URI),
+    adapter: new MongooseAdapter(process.env.MONGO_URI), //process.env.MONGO_URI),
     model: Challenge,
     settings: {
 

@@ -139,7 +139,7 @@ module.exports = {
             
                 console.log(`action register entity:\n${JSON.stringify(entity, null, 4)}`)
 
-                var query = { EmailAddress: entity.Id };
+                var query = { EmailAddress: entity.EmailAddress };
 
 
                 // if (entity.AccountType == null || entity.AccountType == 0) {
